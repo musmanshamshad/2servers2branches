@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Staging Server. <code>src/App.js</code> and save to reload.
+          Staging Server. <code>src/App.js</code> and save to reload. Production Server.
         </p>
         <a
           className="App-link"
