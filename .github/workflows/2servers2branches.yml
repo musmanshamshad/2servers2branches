@@ -37,3 +37,5 @@ jobs:
           elif [ $GITHUB_REF = 'refs/heads/production' ]; then
             scp -r ./build/* ubuntu@3.109.208.135:/home/ubuntu/s2projects
           fi
+
+          
