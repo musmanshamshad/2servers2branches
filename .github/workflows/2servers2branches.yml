@@ -19,8 +19,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan 65.45.34.23 >> ~/.ssh/known_hosts
-          ssh-keyscan 54.23.45.64 >> ~/.ssh/known_hosts
+          ssh-keyscan 3.109.208.39 >> ~/.ssh/known_hosts
+          ssh-keyscan 3.109.208.135 >> ~/.ssh/known_hosts
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 
@@ -33,7 +33,7 @@ jobs:
       - name: Deploy Build to Server
         run: |
           if [ $GITHUB_REF = 'refs/heads/stage' ]; then
-            scp -r ./build/* ubuntu@65.45.34.23:/home/ubuntu/s1projects
+            scp -r ./build/* ubuntu@3.109.208.39:/home/ubuntu/s1projects
           elif [ $GITHUB_REF = 'refs/heads/production' ]; then
-            scp -r ./build/* ubuntu@54.23.45.64:/home/ubuntu/s2projects
+            scp -r ./build/* ubuntu@3.109.208.135:/home/ubuntu/s2projects
           fi
