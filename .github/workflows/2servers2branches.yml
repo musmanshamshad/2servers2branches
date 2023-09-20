@@ -22,7 +22,7 @@ jobs:
           ssh-keyscan 65.45.34.23 >> ~/.ssh/known_hosts
           ssh-keyscan 54.23.45.64 >> ~/.ssh/known_hosts
         env:
-          MYSECRETKEY1: ${{ secrets.PRIVATE_KEY }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 
       - name: Install Dependencies and Build
         run: |
